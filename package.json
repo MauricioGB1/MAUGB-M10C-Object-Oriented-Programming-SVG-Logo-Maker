@@ -1,19 +1,26 @@
 {
-    "name": "oop-svg-logo-maker",
+    "name": "maugb-m10c-object-oriented-programming-svg-logo-maker",
     "version": "1.0.0",
-    "description": "Automatic logo generator.",
+    "description": "Automatic SVC logo generator.",
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
+        "stack": "^0.1.0",
         "test": "jest"
     },
     "keywords": [],
     "author": "",
     "license": "MIT",
     "dependencies": {
-        "inquirer": "^8.2.5"
+        "fs": "^0.0.1-security",
+        "inquirer": "^8.2.5",
+        "stack": "^0.1.0"
     },
     "devDependencies": {
         "jest": "^29.5.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MauricioGB1/MAUGB-M10C-Object-Oriented-Programming-SVG-Logo-Maker.git"
     }
 }
