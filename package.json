@@ -1,0 +1,19 @@
+{
+    "name": "oop-svg-logo-maker",
+    "version": "1.0.0",
+    "description": "Automatic logo generator.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "jest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "inquirer": "^8.2.5"
+    },
+    "devDependencies": {
+        "jest": "^29.5.0"
+    }
+}
