@@ -28,7 +28,7 @@ init();
 
 
 
-/////////////////////////////////////////////// questions.js
+/////////////////////////////////////////////// questions
 
 const colorKeywords = require('./colorKeywords.js')
 
@@ -154,7 +154,7 @@ const questions = [
                 if(!answer.match(hexRegEx)){
                     return console.log("\n please enter a valid hexadecimal)")
                 }
-                retun true;
+                return true;
             }
     },
 ];
