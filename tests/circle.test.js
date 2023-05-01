@@ -1,4 +1,4 @@
-
+const Circle = require('../lib/basicShape/Circle');
 
 describe('Circle', () => {
     it('should return logo with user choice of shape color, tex, and text color', () => {
@@ -14,6 +14,5 @@ describe('Circle', () => {
         );
     });
 });
-
 
 
