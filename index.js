@@ -1,12 +1,15 @@
 
 const inquirer = require('inquirer');
+
 const fs = require('fs');
-const fileName = "./examples/logo.svg";
-const setShape = require('./lib/setShape')
+
+const shapeCreation = require('./lib/shapeCreation')
 
 const filesystem= require('./node_modules/graceful-fs/graceful-fs')
 
 const colorKeywords = ['aliceblue', 'antiquewhite', 'aqua', 'aquaMarine', 'azure', 'beige', 'bisque', 'black', 'blanchedalmond', 'blue', 'blueviolet', 'brown', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue', 'cornsilk', 'crimson', 'cyan', 'darkblue', 'darkcyan', 'darkgoldenrod', 'darkgray', 'darkgrey', 'darkgreen', 'darkkhaki', 'darkmagenta', 'darkolivegreen', 'darkorange', 'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkslateblue', 'darkslategray', 'darkslategrey', 'darkturquoise', 'darkviolet', 'deeppink', 'deepskyblue', 'dimgray', 'dimgrey', 'dodgerblue', 'firebrick', 'floralwhite', 'forestgreen', 'fuchsia', 'gainsboro', 'ghostwhite', 'gold', 'goldenrod', 'gray', 'grey', 'green', 'greenyellow', 'honeydew', 'hotpink', 'indianred', 'indigo', 'ivory', 'khaki', 'lavender', 'lavenderblush', 'lawngreen', 'lemonchiffon', 'lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgrey', 'lightgreen', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightslategrey', 'lightsteelblue', 'lightyellow', 'lime', 'limegreen', 'linen', 'magenta', 'maroon', 'mediumaquamarine', 'mediumblue', 'mediumorchid', 'mediumpurple', 'mediumseagreen', 'mediumslateblue', 'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'midnightblue', 'mintcream', 'mistyrose', 'moccasin', 'navajowhite', 'navy', 'oldlace', 'olive', 'olivedrab', 'orange', 'orangered', 'orchid', 'palegoldenrod', 'palegreen', 'paleturquoise', 'palevioletred', 'papayawhip', 'peachpuff', 'peru', 'pink', 'plum', 'powderblue', 'purple', 'rebeccapurple', 'red', 'rosybrown', 'royalblue', 'saddlebrown', 'salmon', 'sandybrown', 'seagreen', 'seashell', 'sienna', 'silver', 'skyblue', 'slateblue', 'slategray', 'slategrey', 'snow', 'springgreen', 'steelblue', 'tan', 'teal', 'thistle', 'tomato', 'turquoise', 'violet', 'wheat', 'white', 'whitesmoke', 'yellow', 'yellowgreen']
+
+const fileName = "./examples/logo.svg";
 
 const questions = [
     {
@@ -26,7 +29,7 @@ const questions = [
     {
         type: 'input',
         name: 'shapeColor',
-        message: 'Please enter the Color name for the Shape:',
+        message: 'Please enter the COLOR KEYWORD for the SHAPE:',
         when: (answers) => {
             if(answers.shapeColorChoice === 'color keyword') {
                 return true;
@@ -47,7 +50,7 @@ const questions = [
     {
         type: 'input',
         name: 'shapeColor',
-        message: 'Provide the Shape Color in hexadecimal number (#CCCCCC)',
+        message: 'Provide the SHAPE COLOR in HEXADECIMAL number (#CCCCCC)',
         when: (answers) => {
             if(answers.shapeColorChoice === 'hexadecimal'){
                 return true;
@@ -71,7 +74,7 @@ const questions = [
         
 
         validate: (answer) => {
-            if (answer.lenght > 3) {
+            if (answer.length > 3) {
                 return console.log("\n Exceed the number maximum of three characters, Please enter new letters for Logo");
                 }
                 return true;
@@ -88,7 +91,7 @@ const questions = [
     { 
         type: "input",
         name: "textColor",
-        message: 'Enter the text color keyword for your letters:',
+        message: 'Enter the COLOR KEYWORD for your LETTERS:',
         when: (answers) => {
             if(answers.textColorChoice === 'color keyword') {
                 return true;
@@ -110,7 +113,7 @@ const questions = [
     { 
         type: "input",
         name: "textColor",
-        messsage: "Enter the color for the letters in hexadeximal number (#CCCCCC)",
+        messsage: "Enter the COLOR for the LETTERS in HEXADECIMAL NUMBER (#CCCCCC)",
         when: (answers) => {
             if(answers.textColorChoice === 'hexadecimal') {
                 return true;
@@ -131,7 +134,7 @@ const questions = [
 
 
 function createLogo(response) {
-    const svg = setShape(response);
+    const svg = shapeCreation(response);
     fs.writeFile(fileName, svg, ()=> console.log('Generated logo.svg'));
 }
 
@@ -140,7 +143,7 @@ function init() {
     .prompt(questions)
     .then((response) => {
         createLogo(response);
-        console.log( 'SUCCESS!!  Your New Logo is Ready in the examples folder' );
+        console.log( 'SUCCESS !!!  Your NEW LOGO IS READY, look in the examples folder' );
     })
     .catch(err => {
         console.log(err)
