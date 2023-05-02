@@ -39,7 +39,22 @@ Provide instructions and examples for use. Include screenshots as needed.
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
 
-![alt text](assets/images/screenshot.png)
+Vide how to use the application:
+
+![alt text](./assets/videopic.jpg)
+
+User inqut, promted with questions to generate the logo
+
+![alt text](/assets/questionsinput.jpg)
+
+Example of logo creation
+
+![alt text](/assets/logo1-sample.jpg)
+
+Example of logo creation 2
+
+![alt text](/assets/logo2-sample.jpg)
+
 
 ## Credits
 
