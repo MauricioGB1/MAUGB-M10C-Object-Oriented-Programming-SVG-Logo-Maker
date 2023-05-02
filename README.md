@@ -41,6 +41,9 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 Vide how to use the application:
 
+https://github.com/MauricioGB1/MAUGB-M10C-Object-Oriented-Programming-SVG-Logo-Maker/tree/main/video
+
+
 ![alt text](./assets/videopic.jpg)
 
 User inqut, promted with questions to generate the logo
